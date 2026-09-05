@@ -54,7 +54,7 @@ app/src/main/java/com/gosleep/app/
 - **Unit test** (`app/src/test`): logica di dominio pura (Sleep Score, streak,
   crescita pianta, calcolo del prossimo Reverse Alarm), timer del Distraction Block
   con `kotlinx-coroutines-test`, sequenza della Routine Flow, repository del Brain
-  Dump con un fake DAO in-memory. Eseguibili con:
+  Dumpy. Eseguibili con:
   ```
   ./gradlew testDebugUnitTest
   ```
