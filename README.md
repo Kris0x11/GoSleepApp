@@ -4,6 +4,8 @@ Implementazione Android nativa del progetto **GoSleep** (Interazione Uomo-Macchi
 Università degli Studi di Salerno), fedele alla documentazione: onboarding, dashboard,
 Distraction Block / Reverse Alarm (Marco), Routine Flow a 6 step (Elena), Brain Dump
 (Roberto), Relax Mode, Morning Feedback.
+Apk disponibile.
+All'avvio è necessario concendere il permesso alla funzione "non disturbare" del dispositivo.
 
 ## Stack
 
