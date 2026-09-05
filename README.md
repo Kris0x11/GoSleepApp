@@ -58,12 +58,7 @@ app/src/main/java/com/gosleep/app/
   ```
   ./gradlew testDebugUnitTest
   ```
-- **Test strumentati Compose** (`app/src/androidTest`): verificano il rendering e
-  l'interazione delle schermate Distraction Block e Routine Flow su un
-  emulatore/dispositivo reale. Eseguibili con:
-  ```
-  ./gradlew connectedDebugAndroidTest
-  ```
+
 
 ## Note implementative
 
