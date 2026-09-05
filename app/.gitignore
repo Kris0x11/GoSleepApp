@@ -1,0 +1,40 @@
+# Build output
+*.apk
+*.aab
+*.ap_
+*.dex
+/app/build/
+/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+
+# Local config (contiene percorsi della TUA macchina)
+local.properties
+
+# IDE - IntelliJ/Android Studio
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Gradle
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# Log files
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Keystore files (MAI committare chiavi di firma!)
+*.jks
+*.keystore
+
+# Database generati/locali se presenti fisicamente (non lo schema Room)
+*.db
+*.db-journal
