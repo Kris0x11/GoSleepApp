@@ -1,77 +1,194 @@
-# GoSleep — Android (Kotlin)
+# 🌙 GoSleep
 
-Implementazione Android nativa del progetto **GoSleep** (Interazione Uomo-Macchina,
-Università degli Studi di Salerno), fedele alla documentazione: onboarding, dashboard,
-Distraction Block / Reverse Alarm (Marco), Routine Flow a 6 step (Elena), Brain Dump
-(Roberto), Relax Mode, Morning Feedback.
+> Smart Sleep Assistant progettato per combattere la **bedtime procrastination** attraverso UX Design, tecnologia persuasiva e comportamenti psicologici.
+>
+> ## APK disponibile
+>
+> ## Per il completo funzionamento è necessario consentire all'app di accedere alla funzione "non disturbare" del dispositivo.
 
-## Apk disponibile.
+##  Descrizione
 
-## All'avvio è necessario concendere il permesso alla funzione "non disturbare" del dispositivo.
+GoSleep è un progetto di Interaction Design sviluppato per aiutare gli utenti a migliorare la qualità del sonno riducendo le distrazioni notturne, l’ansia cognitiva e la procrastinazione pre-sonno.
 
-## Stack
+L’applicazione utilizza:
 
-- **Kotlin** + **Jetpack Compose** (Material 3, dark mode)
-- **MVVM**: ViewModel + StateFlow per ogni schermata, nessuna libreria di DI esterna
-  (container manuale in `GoSleepApplication` + `AppViewModelFactory`, per restare
-  leggibile a scopo didattico)
-- **Room** per la persistenza locale (sessioni di sonno, note del Brain Dump)
-- **DataStore Preferences** per bedtime, streak, crescita della Sleep Plant
-- **AlarmManager + full-screen notification** per il Reverse Alarm (`notification/`)
-- **Navigation Compose** per il flusso schermate (`navigation/GoSleepNavGraph.kt`)
+* principi di **User-Centered Design**
+* tecniche di **Persuasive Design**
+* pattern cognitivi e comportamentali
+* interfacce low-interaction
+* gamification
 
-## Come aprire il progetto
+L’obiettivo è trasformare il momento di andare a dormire in un’esperienza guidata, semplice e meno stressante.
 
-1. Apri la cartella `GoSleep/` con **Android Studio** (Koala o successivo).
-2. Lascia che Android Studio sincronizzi Gradle (scarica automaticamente il wrapper
-   e le dipendenze da Google/Maven Central — serve una connessione internet).
-3. Esegui su un emulatore/dispositivo con **minSdk 26** (Android 8.0+).
+---
 
-> Il wrapper Gradle (`gradlew`/`gradlew.bat`) non è incluso nello zip: Android Studio
-> lo rigenera automaticamente al primo sync. In alternativa esegui `gradle wrapper`
-> una volta con Gradle 8.7 installato localmente.
+#  Problema
 
-## Struttura
+Molti utenti:
 
-```
-app/src/main/java/com/gosleep/app/
-├── data/
-│   ├── local/          Room: entità + DAO + database
-│   ├── datastore/       Preferences: bedtime, streak, plant growth
-│   └── repository/      SleepRepository, BrainDumpRepository
-├── domain/               Logica pura testabile: SleepScoreCalculator,
-│                         StreakCalculator, PlantGrowthCalculator
-├── notification/         ReverseAlarmScheduler/Receiver, DistractionBlockActivity
-├── navigation/           Routes, NavGraph, ViewModel factory
-└── ui/
-    ├── onboarding/       Benvenuto -> questionario -> setup Reverse Alarm
-    ├── dashboard/        Hub principale
-    ├── distraction/       Caso d'uso Marco: forced friction 5s (img .1A)
-    ├── routine/            Caso d'uso Elena: 6 micro-step (img .1B)
-    ├── braindump/          Caso d'uso Roberto: note testo/voce (img .1C)
-    ├── relax/               Respirazione guidata
-    └── morning/            Sleep Score, streak, crescita della pianta
-```
+* rimandano continuamente il momento di andare a dormire
+* restano bloccati su social, YouTube o videogiochi
+* soffrono di ansia da task incompleti
+* hanno difficoltà ad avviare la routine serale
 
-## Test inclusi
+Questo fenomeno è noto come:
 
-- **Unit test** (`app/src/test`): logica di dominio pura (Sleep Score, streak,
-  crescita pianta, calcolo del prossimo Reverse Alarm), timer del Distraction Block
-  con `kotlinx-coroutines-test`, sequenza della Routine Flow, repository del Brain
-  Dumpy. Eseguibili con:
-  ```
-  ./gradlew testDebugUnitTest
-  ```
+## Bedtime Procrastination
+
+Ovvero la scelta consapevole di posticipare il sonno senza reali motivi esterni.
+
+---
+
+#  Approccio UX
+
+GoSleep basa la progettazione su:
+
+* Don Norman Action Cycle
+* Cognitive Walkthrough
+* Persuasive Design Patterns
+* Behavioral Psychology
+* Human-Computer Interaction principles
+
+---
+
+#  Personas
+
+##  Marco — L’impulsivo digitale
+
+* Scroll compulsivo notturno
+* Alta impulsività
+* Basso self-control
+
+### Soluzione
+
+* Reverse Alarm
+* Distraction Block
+* Forced Friction
+
+---
+
+##  Elena — La pigra esausta
+
+* Stanchezza mentale
+* Inerzia comportamentale
+* Difficoltà ad avviare la routine
+
+### Soluzione
+
+* Micro-task sequenziali
+* Sleep Routine guidata
+* Progress tracking
+
+---
+
+##  Roberto — L’ansioso 
+
+* Overthinking notturno
+* Ansia da task incompleti
+* Stress mentale
+
+### Soluzione
+
+* Brain Dump
+* Input vocale
+* Relax Mode
+
+---
+
+# Features Principali
+
+##  Reverse Alarm
+
+Sistema intelligente che interrompe le distrazioni notturne.
+
+##  Brain Dump
+
+Sistema di cognitive offloading per svuotare la mente prima di dormire.
+
+### Supporta:
+
+* note testuali
+* registrazioni vocali
+* salvataggio rapido
+
+---
+
+##  Relax Mode
+
+Interfaccia minimalista per esercizi di respirazione guidata.
+
+### Include:
+
+* animazioni respirazione
+* feedback visivi
+* low-interaction UI
+
+---
+
+##  Sleep Plant
+
+Sistema di gamification che premia la costanza del sonno.
+
+---
+
+#  Stack Tecnologico per il prototipo
+
+| Tecnologia     | Utilizzo             |
+| -------------- | -------------------- |
+| Kotlin         | Sviluppo Android     |
+| Android Native | Piattaforma          |
+| Figma          | Prototipazione UI/UX |
+
+---
+
+#  Prototipo
+
+Prototype realizzato con Figma:
+
+https://pen-lizard-63714693.figma.site/
+
+---
+
+#  Metodologie UX
+
+Il progetto include:
+
+* Task Analysis
+* Wizard of Oz Testing
+* Cognitive Walkthrough
+* Behavioral Mapping
+* User Personas
+
+---
+
+# Ricerca Scientifica
+
+Studio principale utilizzato:
+
+**Kroese et al. — *Bedtime procrastination: introducing a new area of procrastination***
+
+https://www.researchgate.net/publication/263745067_Bedtime_procrastination_introducing_a_new_area_of_procrastination
+
+---
+
+#  Possibili Miglioramenti Futuri
+
+* integrazione smartwatch
+* sleep tracking avanzato
+* widget Android
+* statistiche avanzate
+* personalizzazione routine
+* monitoraggio audio notturno
+
+---
+
+#  Autore
+
+**Christian D’Amato**
 
 
-## Note implementative
+---
 
-- `DistractionBlockActivity` attiva "Non disturbare" solo se il permesso
-  `ACCESS_NOTIFICATION_POLICY` è già stato concesso dall'utente nelle impostazioni
-  di sistema; il blocco fisico dello schermo richiederebbe permessi Device Admin
-  aggiuntivi, volutamente lasciati fuori dal perimetro di questo prototipo.
-- L'input vocale del Brain Dump espone un hook (`onVoiceTranscriptReady`) pensato
-  per essere collegato a `SpeechRecognizer` di Android; la UI mostra già lo stato
-  di registrazione.
-- Tutti i dati restano sul dispositivo (Room + DataStore), coerente con quanto
-  dichiarato nella sezione "Gestione dei dati" della documentazione.
+# 📄 Licenza
+
+Progetto sviluppato per scopi accademici e di ricerca.
