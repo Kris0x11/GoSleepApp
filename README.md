@@ -2,7 +2,7 @@
 
 > Smart Sleep Assistant progettato per combattere la **bedtime procrastination** attraverso UX Design, tecnologia persuasiva e comportamenti psicologici.
 >
-> ## APK disponibile
+> ## APK disponibile - Version minima android 8.0
 >
 > ## Per il completo funzionamento è necessario consentire all'app di accedere alla funzione "non disturbare" del dispositivo.
 
